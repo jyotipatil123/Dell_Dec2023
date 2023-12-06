@@ -1,98 +1,68 @@
-﻿////using System;
+﻿////// See https://aka.ms/new-console-template for more information
 
-////namespace ConsoleApp_csharp8demo
-////{
-////    interface IDefaultinterface
-////    {
-////        public void defaultmethod()
-////        {
-////            Console.WriteLine("i am in Idefaultinterface----defaultmethod");
-////        }
-////    }
+////global using static System.Math;
+//global using System;
+////global using static System.Console;
 
-////    class A : IDefaultinterface 
-////    {
+////Console.WriteLine("Hello, World!");
 
-////    }
+////int a = 10;
+////int b = 10;
+////Console.WriteLine("Addition result is "+(a+b));
+////Console.WriteLine("Subtraction result is " + (a - b));
+////Console.WriteLine("Multiplication result is " + (a * b));
+////Console.WriteLine("Division result is " + (a / b));
 
-////    internal class Program
-////    {
-////        static void Main(string[] args)
-////        {
-////          IDefaultinterface obj= new A();
-////          obj.defaultmethod();
+////mainclass1 obj = new mainclass1();
+////obj.function1();
 
-////            Console.ReadLine();
-////        }
-////    }
-////}
-
-//// c# 8.0 features
-//// null reference type
+////============================================================
 
 
-//using System;
-//using System.Security.Cryptography.X509Certificates;
+////A.namespacedemo1 obj1 = new A.namespacedemo1();
+////B.namespacedemo2 obj2 = new B.namespacedemo2();
+////C.namespacedemo1 obj3 = new C.namespacedemo1();
 
-//class MyClass
-//{
-//    static void Main(string[] args)
-//    {
-//        //string? msg = null;
+////obj1.function1();
+////obj2.function2();
+////obj3.function3();
 
-//        //Console.WriteLine("length of string is : "+msg.Length);
+////=================================================================
 
-//        //string? x = msg;
-//        //msg = "hello dell team";
-
-//        //Console.WriteLine("length of string is : " + msg.Length);
-
-//        //Console.WriteLine(x.Length);
-
-//        //string message = "welcome to c#8";
-//        //int length = message.Length;
-//        //Console.WriteLine(length);
-//        //===========================================================================
-//        // string msg = null;
-//        // if(!string.IsNullOrEmpty(msg))
-//        // {
-//        //     Console.WriteLine("Lenth of the message is : "+ msg.Length);
-//        // }
-
-//        // var x = msg;
-//        // msg = "welcome to Dell team";
-
-//        // Console.WriteLine("Length of the message is : " + msg.Length);
-
-//        //// Console.WriteLine("Length of the message is : " + x.Length);
-//        //==============================================================================
-
-//        string? msg = null;
-//        Console.WriteLine(msg.Length);
-
-//        public string Name { get;set; }
-
-//        public string? namewithnull { get; set; }
+//string name = "shilpa";
+//int age = 25;
+//string msg = $"welcome {name} for C# training ,I know your age is :{age}";
+//Console.WriteLine(msg);
 
 
+//const string s1 = "hello";
+//Console.WriteLine(s1);
 
-//        Console.ReadLine();
+//const string s2 = $"hello...";
+//Console.WriteLine(s2);
 
-//    }
-//}
+//const string s3 = $"hello....{" "} world";
+//Console.WriteLine(s3);
 
-//==================Null coalescing assignment operator in c# 8.0
+//const string s4 = $"{s1}====>shilpa and team";
+//Console.WriteLine(s4);
 
-using System;
+//==============================================================================
 
-class MyClass
+// c# 10.0 features
+// lamda improvements
+
+Action<string, ConsoleColor> writecolor = (string s1, ConsoleColor color) =>
 {
-    static void Main(string[] args)
-    {
-        int? age = null;
-        age ??= 25;
-        Console.WriteLine("Age is : "+  age);
+    var c1 = Console.ForegroundColor;
+    Console.ForegroundColor = color;
+    Console.WriteLine(s1);
 
+    Console.ForegroundColor = c1;
+};
 
-    }
-}
+Func<string, string> upper=(string s)=> s.ToUpper();
+
+writecolor("welcome", ConsoleColor.Red);
+Console.WriteLine(upper("this is default color"));
+writecolor("bye", ConsoleColor.Green);   
