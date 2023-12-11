@@ -1,0 +1,45 @@
+class Customers
+{
+    public int CustomerId { get; }
+    public string CustomerName { get; set; }
+
+    public Customers(int customerId)
+    {
+        CustomerId = customerId;
+    }
+
+    static void Main(string[] args)
+    {
+        var customers = new Customers(1045)
+        {
+            CustomerName = "Tyson"
+        };
+
+        //customerid cannot be set as the property is immutable.
+        customers.CustomerId = 1099;
+    }
+}
+
+
+
+=======================================================================
+using INit : 
+
+
+class Customers
+{
+    public int CustomerId { get; init; }
+    public string CustomerName { get; set; }
+
+    static void Main(string[] args)
+    {
+        var customers = new Customers()
+        {
+            CustomerId = 1045,
+            CustomerName = "Tyson"
+        };
+
+        //customerid cannot be set as the property is immutable.
+        customers.CustomerId = 1099;
+    }
+}
